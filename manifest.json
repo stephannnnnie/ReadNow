@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "ReadNow",
+    "version": "1.0",
+    "description": "Helps ADHD readers focus on text by highlighting paragraphs and enhancing readability",
+    "permissions": ["activeTab", "scripting","tabs","storage"],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; frame-ancestors 'self'"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+
+    "host_permissions": [
+        "<all_urls>"
+      ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
